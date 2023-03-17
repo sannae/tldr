@@ -1,29 +1,21 @@
-# az appconfig
+# az config
 
-> Gestisce la configurazione di App su Azure.
-> Parte di `az`, il client a riga di comando per Microsoft Azure.
-> Più informazioni: <https://learn.microsoft.com/cli/azure/appconfig>.
+> Gestisce la configurazione della Azure CLI.
+> Parte di `azure-cli`.
+> Più informazioni: <https://learn.microsoft.com/cli/azure/config>.
 
-- Creare una configurazione di App:
+- Mostra tutte le configurazioni:
 
-`az appconfig create --name {{name}} --resource-group {{group_name}} --location {{location}}`
+`az config get`
 
-- Rimuovere una configurazione di App:
+- Mostra le configurazioni per una specifica sezione:
 
-`az appconfig delete --resource-group {{rg_name}} --name {{appconfig_name}}`
+`az config get {{section_name}}`
 
-- Elencare tutte le configurazioni di App sotto la sottoscrizione corrente:
+- Imposta una configurazione:
 
-`az appconfig list`
+`az config set {{configuration_name}}={{value}}`
 
-- Elencare tutte le configurazioni di App in uno specifico gruppo di risorse:
+- Ripristina una configurazione:
 
-`az appconfig list --resource-group {{rg_name}}`
-
-- Mostrare le proprietà di una configurazione di App:
-
-`az appconfig show --name {{appconfig_name}}`
-
-- Aggiornare una specifica configurazione di App:
-
-`az appconfig update --resource-group {{rg_name}} --name {{appconfig_name}}`
+`az config unset {{configuration_name}}`
